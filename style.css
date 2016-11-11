@@ -1,0 +1,11 @@
+span.minus, span.plus {
+    float: right;
+}
+
+span.minus:before {
+    content: "▼"
+}
+
+span.plus:before {
+    content: "▲"
+}
