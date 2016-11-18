@@ -1,3 +1,4 @@
+/// <reference path="typings/angularjs/angular.d.ts" />
 (function() {
 
 	var github = function($http) {
@@ -16,9 +17,24 @@
 						});
 		};
 
+		var getRepo = function(username, reponame) {
+			return $http.get('https://api.github.com/repos/' + username + '/' + reponame)
+						.then(function(response) {
+							return response.data;
+						});
+		}
+
+		var getRepoContributors = function(repo) {
+			return $http.get(repo.contributors_url)
+						.then(function(response) {
+							return response.data;
+						});
+		} 
 		return {
 			getUser: getUser,
-			getRepos: getRepos
+			getRepos: getRepos,
+			getRepo: getRepo,
+			getRepoContributors: getRepoContributors
 		};
 	}
 	var module = angular.module('githubViewer');

@@ -5,40 +5,31 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+  <script src="angularjs/angular.js"></script>
+  <!-- angular route -->
+  <script src="angularjs/angular-route.js"></script>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+  <script src="app.js"></script>
+  <script src="MainController.js"></script>
+  <script src="UserController.js"></script>
+  <script src="RepoController.js"></script>
   <script src="github.js"></script>
   <style type="text/css">
     th {
       cursor: pointer;
     }
   </style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Latest compiled and minified JavaScript -->
-
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
 
-<body ng-controller="MainCtrl">
+<body>
   <div class="container">
-    <h1>{{message}}</h1>
-
-    <div class="row">
-      <div class="bg-danger">{{error}}</div>
-    </div>
-    <form name="searchUser" ng-submit="search(username)">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input ng-paste="" name="username" type="search" class="form-control" required ng-model="username" placeholder="username">
-      </div>
-      <input type="submit" class="btn" value="search">
-      {{countdown}}
-    </form>
-
-    <div ng-include="'userdetails.html'" ng-show="user"></div>
+    <h1 style="float: left;">Github Viewer</h1>
+    <a style="float:right;" href="#/main">início</a>
+    <div ng-view></div> 
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="jquery/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
